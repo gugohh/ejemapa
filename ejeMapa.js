@@ -28,3 +28,15 @@ console.log(L);
 
 
 
+let argumento = "vehicles"  
+
+let url = "https://api.metro.net/agencies/lametro/vehicles/"
+
+fetch(url).then(datos=> datos.json()).then(dataJSON => (dataJSON.items.map((par)=>{
+    let datos = [ par.latitude, par.longitude];
+    console.log(datos) 
+    L.marker(datos).addTo(map);
+
+})));
+
+
